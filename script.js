@@ -104,3 +104,20 @@
 //     });
 //   });
 // }
+
+// time of call in history
+const serviceNames = document.getElementsByClassName("service-name-class");
+const serviceNumbers = document.getElementsByClassName("service-number-class");
+const callButtons = document.getElementsByClassName("call-btn");
+let callHistory = document.getElementById("call-history-id");
+
+let callTime = new Date().toLocaleTimeString();
+for (let i = 0; i < callButtons.length; i++) {
+  callButtons[i].addEventListener("click", function () {
+    let serviceName = serviceNames[i].innerText;
+    let serviceNumber = serviceNumbers[i].innerText;
+    let li = document.createElement("li");
+    li.innerText = `${serviceName}-${serviceNumber} at ${callTime}`;
+    callHistory.appendChild(li);
+  });
+}
