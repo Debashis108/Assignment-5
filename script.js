@@ -66,8 +66,18 @@
 //   });
 // }
 
-// clear history button function
-const clearBtn = document.getElementById("clear-history-btn");
-clearBtn.addEventListener("click", function () {
-  callHistoy.innerText = "";
-});
+// // clear history button function
+// const clearBtn = document.getElementById("clear-history-btn");
+// clearBtn.addEventListener("click", function () {
+//   callHistoy.innerHTML = "";
+// });
+
+// copy count
+let copyCount = 0;
+let copies = document.getElementsByClassName("copy-btn-class");
+for (let copy of copies) {
+  copy.addEventListener("click", function () {
+    copyCount++;
+    document.getElementById("copy-count-id").innerText = copyCount;
+  });
+}
