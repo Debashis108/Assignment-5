@@ -73,11 +73,34 @@
 // });
 
 // copy count
-let copyCount = 0;
-let copies = document.getElementsByClassName("copy-btn-class");
-for (let copy of copies) {
-  copy.addEventListener("click", function () {
-    copyCount++;
-    document.getElementById("copy-count-id").innerText = copyCount;
-  });
-}
+// let copyCount = 0;
+// let copies = document.getElementsByClassName("copy-btn-class");
+// for (let copy of copies) {
+//   copy.addEventListener("click", function () {
+//     copyCount++;
+//     document.getElementById("copy-count-id").innerText = copyCount;
+//     alert("Number copied");
+//   });
+// }
+
+// copy-paste function
+// let copyCount = 0;
+// const copyCountDisplay = document.getElementById("copy-count-id");
+// const copyButtons = document.getElementsByClassName("copy-btn-class");
+
+// for (let i = 0; i < copyButtons.length; i++) {
+//   copyButtons[i].addEventListener("click", function () {
+//     // get the service number (sibling <p>)
+//     const serviceNumber = this.previousElementSibling.textContent;
+
+//     // copy to clipboard
+//     navigator.clipboard.writeText(serviceNumber).then(() => {
+//       // increase count
+//       copyCount++;
+//       copyCountDisplay.textContent = copyCount;
+
+//       // show alert
+//       alert(`📋 Number ${serviceNumber} copied! You can paste it anywhere.`);
+//     });
+//   });
+// }
