@@ -51,17 +51,23 @@
 // }
 
 // list of called history
-const serviceNames = document.getElementsByClassName("service-name-class");
-const serviceNumbers = document.getElementsByClassName("service-number-class");
-const callButtons = document.getElementsByClassName("call-btn");
-let callHistory = document.getElementById("call-history-id");
+// const serviceNames = document.getElementsByClassName("service-name-class");
+// const serviceNumbers = document.getElementsByClassName("service-number-class");
+// const callButtons = document.getElementsByClassName("call-btn");
+// let callHistory = document.getElementById("call-history-id");
 
-for (let i = 0; i < callButtons.length; i++) {
-  callButtons[i].addEventListener("click", function () {
-    let serviceName = serviceNames[i].innerText;
-    let serviceNumber = serviceNumbers[i].innerText;
-    let li = document.createElement("li");
-    li.innerText = `${serviceName}-${serviceNumber}`;
-    callHistory.appendChild(li);
-  });
-}
+// for (let i = 0; i < callButtons.length; i++) {
+//   callButtons[i].addEventListener("click", function () {
+//     let serviceName = serviceNames[i].innerText;
+//     let serviceNumber = serviceNumbers[i].innerText;
+//     let li = document.createElement("li");
+//     li.innerText = `${serviceName}-${serviceNumber}`;
+//     callHistory.appendChild(li);
+//   });
+// }
+
+// clear history button function
+const clearBtn = document.getElementById("clear-history-btn");
+clearBtn.addEventListener("click", function () {
+  callHistoy.innerText = "";
+});
