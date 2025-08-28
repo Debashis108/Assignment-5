@@ -22,6 +22,17 @@
 // }
 
 // coin count
+// let coins = 100;
+// let coinCount = document.getElementById("coin-count");
+// const callButtons = document.getElementsByClassName("call-btn");
+
+// for (let i = 0; i < callButtons.length; i++) {
+//   callButtons[i].addEventListener("click", function () {
+//     coins = coins - 20;
+//     coinCount.innerText = coins;
+//   });
+// }
+
 let coins = 100;
 let coinCount = document.getElementById("coin-count");
 const callButtons = document.getElementsByClassName("call-btn");
@@ -30,5 +41,10 @@ for (let i = 0; i < callButtons.length; i++) {
   callButtons[i].addEventListener("click", function () {
     coins = coins - 20;
     coinCount.innerText = coins;
+    if (coins < 20) {
+      alert("Not enough coins");
+      coins = 100;
+      return;
+    }
   });
 }
