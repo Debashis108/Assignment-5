@@ -84,40 +84,42 @@
 // }
 
 // copy-paste function
-// let copyCount = 0;
-// const copyCountDisplay = document.getElementById("copy-count-id");
-// const copyButtons = document.getElementsByClassName("copy-btn-class");
+const copyButtons = document.querySelectorAll(".copy-btn-class");
 
-// for (let i = 0; i < copyButtons.length; i++) {
-//   copyButtons[i].addEventListener("click", function () {
-//     // get the service number (sibling <p>)
-//     const serviceNumber = this.previousElementSibling.textContent;
+for (let btn of copyButtons) {
+  btn.addEventListener("click", function () {
+    // Find the card
+    let card = btn.closest(".card");
+    // Get service number text
+    let number = card.querySelector(".service-number-class").innerText;
 
-//     // copy to clipboard
-//     navigator.clipboard.writeText(serviceNumber).then(() => {
-//       // increase count
-//       copyCount++;
-//       copyCountDisplay.textContent = copyCount;
+    // Copy to clipboard
+    navigator.clipboard
+      .writeText(number)
+      .then(() => {
+        alert(`✅ ${number} copied to clipboard!`);
+      })
+      .catch((err) => {
+        console.error("Copy failed", err);
+      });
+  });
+}
 
-//       // show alert
-//       alert(`📋 Number ${serviceNumber} copied! You can paste it anywhere.`);
-//     });
+// time of call in history
+// const serviceNames = document.getElementsByClassName("service-name-class");
+// const serviceNumbers = document.getElementsByClassName("service-number-class");
+// const callButtons = document.getElementsByClassName("call-btn");
+// let callHistory = document.getElementById("call-history-id");
+
+// let callTime = new Date().toLocaleTimeString();
+// for (let i = 0; i < callButtons.length; i++) {
+//   callButtons[i].addEventListener("click", function () {
+//     let serviceName = serviceNames[i].innerText;
+//     let serviceNumber = serviceNumbers[i].innerText;
+//     let li = document.createElement("li");
+//     li.innerText = `${serviceName}-${serviceNumber} at ${callTime}`;
+//     callHistory.appendChild(li);
 //   });
 // }
 
-// time of call in history
-const serviceNames = document.getElementsByClassName("service-name-class");
-const serviceNumbers = document.getElementsByClassName("service-number-class");
-const callButtons = document.getElementsByClassName("call-btn");
-let callHistory = document.getElementById("call-history-id");
-
-let callTime = new Date().toLocaleTimeString();
-for (let i = 0; i < callButtons.length; i++) {
-  callButtons[i].addEventListener("click", function () {
-    let serviceName = serviceNames[i].innerText;
-    let serviceNumber = serviceNumbers[i].innerText;
-    let li = document.createElement("li");
-    li.innerText = `${serviceName}-${serviceNumber} at ${callTime}`;
-    callHistory.appendChild(li);
-  });
-}
+// combined code
